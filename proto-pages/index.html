@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mega65 Compatability</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- DataTables (Adding sortables tables - https://datatables.net/) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container navbar-header">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <img src="./img/MEGA65_logo_shadow.png" alt="logo" style="height:40px;">
+      </a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Compatability</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./reporter.html">Reporter</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Nav Bar End -->
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Compatability Definitions -->
+    <div class="row">
+      <div>
+        <h3>Compatability Guide</h3>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="row">Rating</th>
+              <th scope="col">&#x2605</th>
+              <th scope="col">&#x2605&#x2605</th>
+              <th scope="col">&#x2605&#x2605&#x2605</th>
+              <th scope="col">&#x2605&#x2605&#x2605&#x2605</th>
+              <th scope="col">&#x2605&#x2605&#x2605&#x2605&#x2605</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Desc.</th>
+              <td>Software does not boot.</td>
+              <td>Software boots but does not run.</td>
+              <td>Software runs but but displays major issues or crashes.</td>
+              <td>Software runs and displays minor issues.</td>
+              <td>Software displays no known issues.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Software tested table -->
+    <h2>Software Titles Tested</h2>
+
+    <!-- Sample Data Warning -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Sample data</strong> is being used here.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- Sample Data Warning End -->
+
+
+    <!-- DataTables Script -->
+    <script>
+      $(document).ready(function() {
+          $('#testedSoftware').DataTable();
+      } );
+    </script>
+    <table id="testedSoftware" class="table table-hover table-striped table-sm" data-toggle="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Compatability</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bubble Bobble</td>
+          <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Impossible Mission</td>
+          <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-09-01</td>
+        </tr>
+        <tr>
+          <td>Boulder Dash</td>
+          <td>&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>The Great Giana Sisters</td>
+          <td>&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Prince of Persia</td>
+          <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Wizball</td>
+          <td>&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Turrican II</td>
+          <td>&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Zak McKracken and the Alien Mindbenders</td>
+          <td>&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Pirates!</td>
+          <td>&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+        <tr>
+          <td>Armalyte</td>
+          <td>&#x2605&#x2605&#x2605&#x2605</td>
+          <td>2018-08-31</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
