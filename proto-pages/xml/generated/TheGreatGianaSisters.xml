@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LIBRARY>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="temp.xsd">
+  <GAME>
+    <TITLE>The Great Giana Sisters</TITLE>
+    <DEVELOPER>Time Warp Productions</DEVELOPER>
+    <GENRE>Platform</GENRE>
+    <YEAR>1987</YEAR>
+    <COMPATIBILITY>N/A</COMPATIBILITY>
+    <ISSUES></ISSUES>
+  </GAME>
+</LIBRARY>

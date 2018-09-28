@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LIBRARY>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="temp.xsd">
+  <GAME>
+    <TITLE>Prince of Persia</TITLE>
+    <DEVELOPER>Andreas Varga, Steven Day, Mikael Backlund</DEVELOPER>
+    <GENRE>Platform Adventure</GENRE>
+    <YEAR>2011</YEAR>
+    <COMPATIBILITY>N/A</COMPATIBILITY>
+    <ISSUES></ISSUES>
+  </GAME>
+</LIBRARY>
