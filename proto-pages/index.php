@@ -1,123 +1,106 @@
-<?php include_once 'header.inc.php';
-$pageTitle = 'Home';
-?>
-<!--START CONTENT-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mega65 Compatability</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- JQuery  -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-<!-- Main Content -->
-<div class="container">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-  <!-- Compatability Definitions -->
-  <div class="row">
-    <div>
-      <h3>Compatability Guide</h3>
-      <table class="table table-sm">
-        <thead>
-          <tr>
-            <th scope="row">Rating</th>
-            <th scope="col">&#x2605</th>
-            <th scope="col">&#x2605&#x2605</th>
-            <th scope="col">&#x2605&#x2605&#x2605</th>
-            <th scope="col">&#x2605&#x2605&#x2605&#x2605</th>
-            <th scope="col">&#x2605&#x2605&#x2605&#x2605&#x2605</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Desc.</th>
-            <td>Software does not boot.</td>
-            <td>Software boots but does not run.</td>
-            <td>Software runs but but displays major issues or crashes.</td>
-            <td>Software runs and displays minor issues.</td>
-            <td>Software displays no known issues.</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- DataTables (Adding sortables tables - https://datatables.net/) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container navbar-header">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <img src="./img/MEGA65_logo_shadow.png" alt="logo" style="height:40px;">
+      </a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.php">Compatability</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./reporter.php">Reporter</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Nav Bar End -->
+
+  <!-- Main Content -->
+  <!-- Call to action -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Compatability</h1>
+      <p class="lead">Software tested on the Mega65</p>
     </div>
   </div>
 
-  <!-- Software tested table -->
-  <h2>Software Titles Tested</h2>
+  <div class="container mb-5">
+    <!-- Compatability Definitions -->
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Mega65 Compatability </h1>
+        <p>The Mega65 aims to be a faithful recreation of the Commodore65.
+          Effectively an improved version of the Commodore 64, it was meant to be backwards-compatible with the older computer.</p>
+          <p>This backwards compatability is not perfect.
+            Some software on the Commodore64 utilized undocumented features of the hardware.
+            This may or may not carry over to the Mega65 and thusly requires testing.
+          </p>
+      </div>
+      <div class="col-md-6">
+        <h3>Compatability Guide</h3>
+        <table class="table table-sm">
+          <thead class="thead-dark">
+            <tr><th scope="col">Rating</th><th scope="row">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">&#9733;</th><td>Software does not boot.</td></tr>
+            <tr><th scope="row">&#9733;&#9733;</th><td>Software boots but does not run.</td></tr>
+            <tr><th scope="row">&#9733;&#9733;&#9733;</th><td>Software runs but but displays major issues or crashes.</td></tr>
+            <tr><th scope="row">&#9733;&#9733;&#9733;&#9733;</th><td>Software runs and displays minor issues.</td></tr>
+            <tr><th scope="row">&#9733;&#9733;&#9733;&#9733;&#9733;</th><td>Software displays no known issues.</td></tr>
+          <tbody>
+        </table>
+      </div>
+    </div>
 
-  <!-- Sample Data Warning -->
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Sample data</strong> is being used here.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <!-- Sample Data Warning End -->
 
+    <!-- AJAX Script -->
+    <script>
+      $(document).ready(function(){
+        // $("#ajaxContent").load("titlesTestedTable.php");
+        $('#testedSoftware').DataTable( {
+          "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]],
+          "pageLength":25
+        } );
+      });
+    </script>
 
-  <!-- DataTables Script -->
-  <script>
-    $(document).ready(function() {
-        $('#testedSoftware').DataTable(){
-          "pageLength": 50;
-        };
-    } );
-  </script>
-  <table id="testedSoftware" class="table table-hover table-striped table-sm" data-toggle="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Compatability</th>
-        <th>Last Updated</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Bubble Bobble</td>
-        <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Impossible Mission</td>
-        <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-09-01</td>
-      </tr>
-      <tr>
-        <td>Boulder Dash</td>
-        <td>&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>The Great Giana Sisters</td>
-        <td>&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Prince of Persia</td>
-        <td>&#x2605&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Wizball</td>
-        <td>&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Turrican II</td>
-        <td>&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Zak McKracken and the Alien Mindbenders</td>
-        <td>&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Pirates!</td>
-        <td>&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-      <tr>
-        <td>Armalyte</td>
-        <td>&#x2605&#x2605&#x2605&#x2605</td>
-        <td>2018-08-31</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <h2>Tested Games</h2>
+    <!-- Compatability Table -->
+      <table id="testedSoftware" class="table table-hover table-striped table-sm" data-toggle="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Title</th><th>Compatability</th><th>Last Updated</th>
+          </tr>
+        </thead>
+        <tbody id="testedSoftwareBody">
+  <?php include 'titlesTestedTable.php';?>
+        </tbody>
+      </table>
 
+  </div><!-- Container End -->
 </body>
 </html>

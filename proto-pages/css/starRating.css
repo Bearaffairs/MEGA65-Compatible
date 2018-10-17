@@ -1,0 +1,19 @@
+.starrating > input {display: none;}  /* Remove radio buttons */
+
+.starrating > label:before {
+  content: "\2605"; /* Star */
+  margin: 2px;
+  font-size: 300%;
+  display: inline-block;
+}
+
+.starrating > label
+{
+  color: #343a40; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label
+{ color: #ffc107 ; } /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label
+{ color: #ffc107 ;  } /* Set yellow color when star hover */
