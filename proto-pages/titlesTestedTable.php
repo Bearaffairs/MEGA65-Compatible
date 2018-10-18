@@ -23,11 +23,14 @@
     $xml=simplexml_load_file($filename) or die("Error: Cannot create object");
     // Loop through each child "GAME" element and extract info
     // XML elements are CASE SESITIVE!
+    $xmlName = str_replace($directory,"",$filename);
     foreach($xml->children() as $childGAME) {
       echo "        <tr>\n";
-      echo "          <td>" . $childGAME->title . "</td>\n";
+
+      echo '          <td>' . $childGAME->title . "</td>\n";
       echo "          <td>" . getCompatabilityStars($childGAME->compatibility) . "</td>\n";
       echo "          <td>" . date("Y-m-d H:i:s", filemtime($filename)) . "</td>\n";
+      echo '          <td><a class="badge badge-secondary" href="./reporter.php?xml='. $filename .'">' . $xmlName . "</a></td>\n";
       echo "        </tr>\n";
     }//inner loop end
   }//outer loop end

@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <library>
   <game>
-    <title>Skate or Die! </title>
-    <developer>Electronic Arts, Konami   </developer>
-    <genre>>Sports </genre>>
-    <year>1988 </year>
-    <compatibility>N/A </compatibility>
-    <issues>N/A </issues>
+    <title>Skate or Die!</title>
+    <developer>Electronic Arts, Konami</developer>
+    <publisher>Electronic Arts, Konami</publisher>
+    <genre>Sports </genre>
+    <year>1984</year>
+    <compatibility>3</compatibility>
+    <issues>N/A</issues>
   </game>
 </library>

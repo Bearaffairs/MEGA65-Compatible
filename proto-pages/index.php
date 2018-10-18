@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container navbar-header">
       <!-- Brand/logo -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.php">
         <img src="./img/MEGA65_logo_shadow.png" alt="logo" style="height:40px;">
       </a>
       <!-- Links -->
@@ -93,7 +93,7 @@
       <table id="testedSoftware" class="table table-hover table-striped table-sm" data-toggle="table">
         <thead class="thead-dark">
           <tr>
-            <th>Title</th><th>Compatability</th><th>Last Updated</th>
+            <th>Title</th><th>Compatability</th><th>Last Updated</th><th>Edit</th>
           </tr>
         </thead>
         <tbody id="testedSoftwareBody">

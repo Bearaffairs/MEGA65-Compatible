@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <library>
   <game>
-    <title>Bubble Bobble </title>
-    <developer>Taito  </developer>
-    <genre>>Platformer </genre>>
+    <title>Bubble Bobble</title>
+    <developer>Stephen Ruddy</developer>
+    <publisher>Firebird</publisher>
+    <genre>Platformer </genre>
     <year>1986</year>
-    <compatibility>N/A </compatibility>
-    <issues>N/A </issues>
+    <compatibility>3</compatibility>
+    <issues>N/A</issues>
   </game>
 </library>

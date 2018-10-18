@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <library>
   <game>
-    <title>Flimbo's Quest </title>
+    <title>Flimbo's Quest</title>
     <developer>System 3 (Studio 3 Interactive)   </developer>
-    <genre>>Platformer </genre>>
-    <year>1990 </year>
-    <compatibility>N/A </compatibility>
-    <issues>N/A </issues>
+    <publisher/>
+    <genre>Platformer </genre>
+    <year>1990</year>
+    <compatibility>5</compatibility>
+    <issues>N/A</issues>
   </game>
 </library>

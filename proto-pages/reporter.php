@@ -26,7 +26,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container navbar-header">
       <!-- Brand/logo -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.php">
         <img src="./img/MEGA65_logo_shadow.png" alt="logo" style="height:40px;">
       </a>
       <!-- Links -->
@@ -51,6 +51,37 @@
     </div>
   </div>
 
+  <?php
+    /* Initialise blank value */
+    $softwareTitleValue = '';
+    $softwareDeveloperValue = '';
+    $softwarePublisherValue = '';
+    $softwareGenreValue = '';
+    $softwareYearValue = '';
+    $softwareCompatibilityValue = '';
+    $softwareIssuesValue = '';
+
+    //Get xml directory from URI
+    if (!empty($_GET['xml'])) {
+      // echo 'something in xml: '. $_GET['xml']; //Trace statement
+
+      /* Proceed only if xml path is valid */
+      if (file_exists($_GET['xml'])) {
+        // echo "<br/>file exists"; //Trace statement
+        $xml = simplexml_load_file($_GET['xml']);
+
+        /* Set values from xml file */
+        $softwareTitleValue = trim($xml->game->title);
+        $softwareDeveloperValue = trim($xml->game->developer);
+        $softwarePublisherValue = trim($xml->game->publisher);
+        $softwareGenreValue = trim($xml->game->genre);
+        $softwareYearValue = trim($xml->game->year);
+        $softwareCompatibilityValue = trim($xml->game->compatibility);
+        $softwareIssuesValue = trim($xml->game->issues);
+      } //file exists block
+    } //GET block
+  ?>
+
   <!-- Form Content -->
   <div class="container">
     <div class="row">
@@ -60,7 +91,8 @@
                 <!-- Title -->
                 <div class="form-group">
                   <label for="softwareTitle">Software Title</label>
-                  <input name="softwareTitle" id="softwareTitle" class="form-control" type="text" placeholder="e.g. Boulder Dash" required>
+                  <input name="softwareTitle" id="softwareTitle" class="form-control" type="text" placeholder="e.g. Boulder Dash"
+                  value="<?php echo $softwareTitleValue; ?>" required>
                 </div>
 
                 <!-- Developer, Publisher, Genre, Year -->
@@ -68,21 +100,25 @@
                   <div class="form-row">
                     <div class="col-md-6">
                       <label for="softwareDeveloper">Developer</label>
-                      <input name="softwareDeveloper" id="softwareDeveloper" class="form-control" type="text" placeholder="e.g. Peter Liepa" required>
+                      <input name="softwareDeveloper" id="softwareDeveloper" class="form-control" type="text" placeholder="e.g. Peter Liepa"
+                      value="<?php echo $softwareDeveloperValue; ?>" required>
                     </div>
                     <div class="col-md-6">
                       <label for="softwarePublisher">Publisher</label>
-                      <input name="softwarePublisher" id="softwarePublisher" class="form-control" type="text" placeholder="e.g. First Star Software">
+                      <input name="softwarePublisher" id="softwarePublisher" class="form-control" type="text" placeholder="e.g. First Star Software"
+                      value="<?php echo $softwarePublisherValue; ?>">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-md-6">
                       <label for="softwareGenre">Genre</label>
-                      <input name="softwareGenre" id="softwareGenre" class="form-control" type="text" placeholder="e.g. Puzzle" required>
+                      <input name="softwareGenre" id="softwareGenre" class="form-control" type="text" placeholder="e.g. Puzzle"
+                      value="<?php echo $softwareGenreValue; ?>" required>
                     </div>
                     <div class="col-md-6">
                       <label for="softwareYear">Release Year</label>
-                      <input name="softwareYear" id="softwareYear" class="form-control" type="number" min="1976" placeholder="e.g. 1984" required>
+                      <input name="softwareYear" id="softwareYear" class="form-control" type="number" min="1976" placeholder="e.g. 1984"
+                      value="<?php echo $softwareYearValue; ?>" required>
                     </div>
                   </div>
                 </div>
@@ -94,11 +130,21 @@
                     <div class="form-group">
                       <p >Compatability Rating</p>
                       <div class="starrating d-inline-flex justify-content-center flex-row-reverse rounded bg-secondary p-2">
-                        <input type="radio" id="star5" name="softwareCompatibility" value="5" /><label for="star5" title="5 star" ></label>
-                        <input type="radio" id="star4" name="softwareCompatibility" value="4" /><label for="star4" title="4 star"></label>
-                        <input type="radio" id="star3" name="softwareCompatibility" value="3" /><label for="star3" title="3 star"></label>
-                        <input type="radio" id="star2" name="softwareCompatibility" value="2" /><label for="star2" title="2 star"></label>
-                        <input type="radio" id="star1" name="softwareCompatibility" value="1" checked /><label for="star1" title="1 star"></label>
+                        <input type="radio" id="star5" name="softwareCompatibility" value="5"
+                          <?php if($softwareCompatibilityValue == '5') echo 'checked'; ?>
+                        /><label for="star5" title="5 star" ></label>
+                        <input type="radio" id="star4" name="softwareCompatibility" value="4"
+                          <?php if($softwareCompatibilityValue == '4') echo 'checked'; ?>
+                        /><label for="star4" title="4 star"></label>
+                        <input type="radio" id="star3" name="softwareCompatibility" value="3"
+                          <?php if($softwareCompatibilityValue == '3') echo 'checked'; ?>
+                        /><label for="star3" title="3 star"></label>
+                        <input type="radio" id="star2" name="softwareCompatibility" value="2"
+                          <?php if($softwareCompatibilityValue == '2') echo 'checked'; ?>
+                        /><label for="star2" title="2 star"></label>
+                        <input type="radio" id="star1" name="softwareCompatibility" value="1"
+                          <?php if($softwareCompatibilityValue == '1' || empty($softwareCompatibilityValue) ) echo 'checked'; ?>
+                        /><label for="star1" title="1 star"></label>
                       </div>
                     </div>
                     <!-- Compatability Rating End -->
@@ -107,7 +153,7 @@
                     <!-- Issues -->
                     <div class="form-group">
                       <label for="softwareIssues">Issues Noticed</label>
-                      <textarea name="softwareIssues" id="softwareIssues" class="form-control" rows="6" placeholder="e.g. Stuttering, frame tearing, etc."></textarea>
+                      <textarea name="softwareIssues" id="softwareIssues" class="form-control" rows="6" placeholder="e.g. Stuttering, frame tearing, etc."><?php echo $softwareIssuesValue; ?></textarea>
                     </div>
                     <!-- Issues End -->
                   </div>
@@ -117,21 +163,21 @@
                   <div class="form-check">
                     <input id="invalidCheck" class="form-check-input" type="checkbox" value="true" required>
                     <label class="form-check-label" for="invalidCheck">
-                        I'm sure I want to generate a report
+                        I'm sure I want to submit a report
                     </label>
                     <div class="invalid-feedback">
                       You must agree before submitting.
                     </div>
                   </div>
                 </div>
-                <button id="btnSave" type="submit" class="btn btn-secondary" disabled>Generate Report</button>
+                <button id="btnSave" type="submit" class="btn btn-secondary" disabled>Submit Report</button>
               </form>
               <!-- Reporting Form End -->
       </div><!-- col end -->
       <!-- XML DISPLAY -->
       <div class ="col-sm-5">
         <div class="form-group">
-          <label for="xmlOutput">XML output</label>
+          <label for="xmlOutput" id="xmlOutputName">XML output</label>
           <textarea id="xmlOutput" class="form-control" rows="16" disabled></textarea>
         </div>
           <!-- <button type="button" id="filenamer" class="btn btn-secondary btn-sm">Sugest fileName</button> -->
@@ -159,21 +205,34 @@
   });
 
   //Suggest a filename
-  $("#filenamer").click( function() {
+  function buildFilename() {
     var filename = $("#softwareTitle").val()
     filename = filename.toLowerCase();
     filename = filename.replace(/\s+/g, '_');
     filename += ".xml";
     console.log("suggested filename: " + filename)
-  });
+    return String(filename);
+  }
 
   //On page load build xml string
+  $(function(){
+   // jQuery methods go here...
+
+   $("#softwareTitle").val().trim();
+   buildStrings();
+  });
 
   //Update disabled text area with XML string
   $("#compatabilityForm").on('change keyup', function(e) {
-    console.log($("#softwareTitle").val())
-    $("#xmlOutput").val(buildXMLStr());
+    buildStrings();
   });
+
+  // Build all dynamic strings
+  function buildStrings() {
+    $("#softwareTitle").val($.trim($("#softwareTitle").val()));
+    $("#xmlOutput").val(buildXMLStr());
+    $("#xmlOutputName").text("XML Output for: " + buildFilename());
+  }
 
   //Build the XML string
   function buildXMLStr() {
