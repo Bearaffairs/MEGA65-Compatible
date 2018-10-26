@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library>
+  <game>
+    <title>Impossible Mission</title>
+    <developer>Epyx</developer>
+    <publisher>Epyx</publisher>
+    <genre>Platform Adventure</genre>
+    <year>1984</year>
+    <compatibility>3</compatibility>
+    <issues>Test content</issues>
+  </game>
+</library>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="temp.xsd">
+  <game>
+    <title>Boulder Dash </title>
+    <developer>First Star Software  </developer>
+    <genre>>Puzzle </genre>>
+    <year>1984 </year>
+    <compatibility>Yes </compatibility>
+    <issues>Slight jittering on vertical scrolling </issues>
+  </game>
+  <game>
+    <title>High Noon </title>
+    <developer>Ocean Software   </developer>
+    <genre>>Shoot 'em up </genre>>
+    <year>1984 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>Bubble Bobble </title>
+    <developer>Taito  </developer>
+    <genre>>Platformer </genre>>
+    <year>1986</year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>Lode Runner </title>
+    <developer>Brøderbund   </developer>
+    <genre>>Platformer </genre>>
+    <year>1983 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>California GAMEs </title>
+    <developer>Epyx   </developer>
+    <genre>>Sports  </genre>>
+    <year>1987 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>Paradroid </title>
+    <developer>Graftgold   </developer>
+    <genre>>Shoot 'em up </genre>>
+    <year>1985 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>Skate or Die! </title>
+    <developer>Electronic Arts, Konami   </developer>
+    <genre>>Sports </genre>>
+    <year>1988 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+  <game>
+    <title>Flimbo's Quest </title>
+    <developer>System 3 (Studio 3 Interactive)   </developer>
+    <genre>>Platformer </genre>>
+    <year>1990 </year>
+    <compatibility>N/A </compatibility>
+    <issues>N/A </issues>
+  </game>
+</library>
