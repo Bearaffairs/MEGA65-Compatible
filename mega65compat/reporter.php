@@ -254,7 +254,7 @@
     //Build the XML string
     function buildXMLStr() {
       var fileContent = '';
-      fileContent += '<?xml version="1.0" encoding="utf-8"?>\n<library>\n';
+      fileContent += '<xml version="1.0" encoding="utf-8"?>\n<library>\n';
       fileContent += "  <game>\n"
       fileContent += "    <title>" + $("#softwareTitle").val() + "</title>\n";
       fileContent += "    <developer>" + $("#softwareDeveloper").val() + "</developer>\n";
